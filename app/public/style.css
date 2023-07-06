@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+body{
+    margin: 0;
+    background-color: #dedede;
+    opacity: 0.8;
+    background-image: radial-gradient(#1900ec 0.55px, #dedede 0.55px);
+    background-size: 11px 11px;
+    font-family: 'Kanit', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh; /* para ajustarlo vertical */
+    font-size: larger;
+}
+
+.form-container{
+    width: 400px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    padding: 40px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form+p, form p{
+    text-align: center;
+}
+
+input, .btn-form, .btn{
+    border-radius: 5px;
+    border: unset;
+    padding: 15px 30px;
+    font-size: large;
+}
+
+.btn-form, .btn{
+    cursor: pointer;
+    background-color: #1900ec;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.escondido{
+    display: none;
+}
+
+
+.error{
+    color: red;
+}
+
+/* sr-only oculta visualmente los elementos excepto para lectores de pantalla */
+.sr-only{ 
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
