@@ -1,3 +1,6 @@
+const msjErorr = document.getElementsByClassName("error")[0];
+
+
 document.getElementById("registro").addEventListener("submit", async(e)=>{
     e.preventDefault();
     //console.log(e.target.children.usuario.value);
@@ -13,4 +16,9 @@ document.getElementById("registro").addEventListener("submit", async(e)=>{
 
         })
     })
+    if(!res.ok) return msjErorr.classList.toggle("escondido", false);
+    const resJson = await res.json();
+    if(resJson.redirect){
+        window.location.href = resJson.redirect;
+    }
 })
