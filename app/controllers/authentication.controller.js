@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const usuarios = [{
+export const usuarios = [{
     user: "lio",
     email: "messi@gmail.com",
     password: "$2a$05$W8DBwVYGjv0BP0LlSlWvj.DM9nRfBndJrx8WOsgjD9Rv147lb5tNK"
@@ -27,7 +27,6 @@ const login = async (req, res) =>{
            return res.status(401).send({status:"Error", message: "Usuario y/o contraseña incorrectos"})
         
         const loginCorrecto = await bcrypt.compare(password, userRevisado.password)
-        console.log(loginCorrecto)
         if(loginCorrecto){
     
             // Si el login es correcto, generamos un token
